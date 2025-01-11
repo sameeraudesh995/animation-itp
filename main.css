@@ -11,6 +11,7 @@
     width: 100%;
     height: 40vh;
     background-color: rgba(44, 62, 80, 1.0);
+    overflow: hidden;
 }
 .road-bottom{
     width: 100%;
@@ -21,13 +22,143 @@
 /* ========================================== */
 .car-wrapper{
     width: 270px;
-    border: 1px solid red;
-    height: 250px;
+    position: relative;
+    animation: leftToRight 4s infinite linear;
 }
 .car{
     width: 100%;
 }
 .wheel{
-    width: 50px;
+    width: 45px;
     position: absolute;
+    bottom: 0;
+    animation: forwardWheel 1s linear infinite;
 }
+.wheel-1{
+    left: 35px;
+    top: 94px;
+}
+.wheel-2{
+    left: 189px;
+    top: 95px;
+}
+
+.m1{
+    position: absolute;
+    margin-top: -35px;
+    z-index: 1;
+}
+.m2{
+    position: absolute;
+    margin-left: 600px;
+    margin-top: -35px;
+}
+
+.m3{
+    position: absolute;
+    margin-left: 700px;
+    margin-top: 35px;
+  
+}
+.c-2{
+    width: 200px;
+    position: absolute;
+    margin-top: 0px;
+    animation: cloudflow-1 10s linear infinite;
+}
+.line{
+    position: absolute;
+    width: 100%;
+    border: 5px dashed white;
+    margin-top: 130px;
+}
+@keyframes cloudflow-1{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+@keyframes forwardWheel {
+    from{
+      transform: rotate(0); 
+    }
+    to{
+        transform: rotate(360deg);
+    }
+    
+    
+}
+@keyframes leftToRight{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+
+.butterfly-main {
+    position: absolute;
+    width: 300px;
+    height: 350px; 
+    overflow: hidden;
+    animation: butterfly-fly 20s infinite linear;
+  }
+  
+  .background {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+    animation: parishoot 15s linear infinite;
+    
+  }
+
+
+
+  .butterfly {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: url('image/butterfly.gif') no-repeat center/contain; 
+    animation: fly 10s infinite linear;
+  }
+  
+  @keyframes fly {
+    0% {
+      transform: translate(10%, 20%) rotate(0deg);
+    }
+    25% {
+      transform: translate(80%, 30%) rotate(45deg);
+    }
+    50% {
+      transform: translate(50%, 70%) rotate(-30deg);
+    }
+    75% {
+      transform: translate(20%, 40%) rotate(60deg);
+    }
+    100% {
+      transform: translate(10%, 20%) rotate(0deg);
+    }
+  }
+  @keyframes butterfly-fly{
+    0%{
+        left: 0%;
+    }
+    100%{
+        left: 100%;
+    }
+  }
+  @keyframes parishoot{
+    0%{
+        right: 0%;
+    }
+    100%{
+        right: 100%;
+    }
+  }
+

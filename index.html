@@ -7,8 +7,20 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="top-outer"></div>
+    <div class="top-outer">
+        <img src="image/rb_77907.png" alt="Background" class="background">
+        <div class="butterfly-main">
+             
+            <div class="butterfly"></div>
+          </div>
+          <img src="image/mountain-1.png" alt="" class="m1">
+          <img src="image/mountain-2.png" alt="" class="m2">
+          <img src="image/mountain-3.png" alt="" class="m3">
+          
+          <img src="image/cloude-3.png" alt="imag-2" class="c-2">
+    </div>
         <div class="rod-top">
+            <div class="line"></div>
             <div class="car-wrapper">
                 <img src="image/pngwing.com.png" alt="car" class="car">
                 <img src="image/wheel.png" alt="wheel" class="wheel wheel-1">
@@ -16,5 +28,23 @@
             </div>
         </div>
             <div class="road-bottom"></div>
+            <script>
+                const butterfly = document.querySelector('.butterfly');
+                const container = document.querySelector('.butterfly-main');
+                
+                function randomPosition() {
+                  const x = Math.random() * container.offsetWidth;
+                  const y = Math.random() * container.offsetHeight;
+                  return { x, y };
+                }
+                
+                function animateButterfly() {
+                  const { x, y } = randomPosition();
+                  butterfly.style.transform = `translate(${x}px, ${y}px) rotate(${Math.random() * 360}deg)`;
+                }
+                
+                setInterval(animateButterfly, 1000); // Move every second
+                </script>
+                
 </body>
 </html>
